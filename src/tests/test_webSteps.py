@@ -1,5 +1,7 @@
 from unittest import TestCase
+from ..close.close import CloseBrowser
 
-class TestWebSteps(TestCase):
-    def test_name(self):
-        print('this is test')
+class TestClose(TestCase):
+
+    def test_close_browser(self): 
+        cb = CloseBrowser('Browser')
