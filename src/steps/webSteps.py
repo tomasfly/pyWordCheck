@@ -24,9 +24,12 @@ class WebSteps(object):
         for element in elements:
             if element.is_displayed() is True:
                 if word in element.text:
-                    print('there is a match')
                     total = total + 1
         return total
+    def getCountSingleString(self,elements,word):
+        text = elements[0].text
+        count = text.upper().count(word.upper())
+        return count            
     def getElementByText(self,text):
         self.browser.find_element_by_xpath(text)
     def checkWordTest(self,word):
@@ -36,8 +39,9 @@ class WebSteps(object):
         for xpath in self.t:
             element = self.browser.find_element(By.XPATH,xpath)
             element.click()
+            # allElements = self.getElementsByXpath('//*')
             allElements = self.getElementsByXpath('//body')
-            totalPage = self.getCount(allElements,'Fhios')
+            totalPage = self.getCountSingleString(allElements,'Fhios')
             total = total + totalPage            
         return total
          

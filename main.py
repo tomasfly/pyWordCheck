@@ -8,6 +8,7 @@ targetUrl = 'http://www.fhios.es/'
 it = InitTests()
 browser = it.getDriver(targetUrl)
 ws = WebSteps(browser)
-ws.checkWordTest('Fhios')
+words = ws.checkWordTest('Fhios')
+print(words)
 close = CloseBrowser(browser)
 close.close()
