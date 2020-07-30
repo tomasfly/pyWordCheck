@@ -41,7 +41,7 @@ class WebSteps(object):
             element.click()
             # allElements = self.getElementsByXpath('//*')
             allElements = self.getElementsByXpath('//body')
-            totalPage = self.getCountSingleString(allElements,'Fhios')
+            totalPage = self.getCountSingleString(allElements,'wordToMatch')
             total = total + totalPage            
         return total
          
