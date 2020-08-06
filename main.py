@@ -3,7 +3,7 @@ from src.steps.webSteps import WebSteps
 from src.init.initTests import InitTests
 from src.close.close import CloseBrowser
 
-targetUrl = 'http://www.fhios.es/'
+targetUrl = 'http://www.example.com/'
 
 it = InitTests()
 browser = it.getDriver(targetUrl)
