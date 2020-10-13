@@ -6,27 +6,27 @@ from selenium import webdriver
 browser = webdriver.Firefox()
 
 class SeleniumTest:
-    def checkWord(self):
+    def checkWord(self,url,word):
        
-        browser.get('http://www.fhios.es/')
+        browser.get(url)
         main = browser.execute_script("return document.documentElement.outerHTML")
-        countMain = main.count('Fhios')
+        countMain = main.count(word)
         
-        browser.get('http://www.fhios.es/servicios')
+        browser.get(url)
         servicios = browser.execute_script("return document.documentElement.outerHTML")
-        serviciosCount = servicios.count('Fhios')
+        serviciosCount = servicios.count(word)
         
-        browser.get('http://www.fhios.es/clientes')
+        browser.get(url)
         clientes = browser.execute_script("return document.documentElement.outerHTML")
-        clientesCount = clientes.count('Fhios')
+        clientesCount = clientes.count(word)
         
-        browser.get('http://www.fhios.es/contactanos')
+        browser.get(url)
         contactanos = browser.execute_script("return document.documentElement.outerHTML")
-        contactanosCount = contactanos.count('Fhios')
+        contactanosCount = contactanos.count('word)
         
-        browser.get('http://www.fhios.es/unete')
+        browser.get(url)
         unete = browser.execute_script("return document.documentElement.outerHTML")
-        uneteCount = unete.count('Fhios')
+        uneteCount = unete.count(word)
         
         result = countMain + serviciosCount + clientesCount + contactanosCount + uneteCount
         
